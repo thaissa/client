@@ -9,11 +9,21 @@
 
 /* global __MANIFEST__ */
 
+/**
+ * Subset of configuration settings (see https://h.readthedocs.io/projects/client/en/latest/publishers/config/)
+ * which affect where the client loads its assets from.
+ *
+ * @typedef BootSettings
+ * @prop {string} [assetRoot]
+ * @prop {string} [sidebarAppUrl]
+ */
+
 import { jsonConfigsFrom } from '../shared/settings';
 
 import boot from './boot';
 import processUrlTemplate from './url-template';
 
+/** @type {BootSettings} */
 const settings = jsonConfigsFrom(document);
 
 // Use the asset root and sidebar app locations specified in the host page,
