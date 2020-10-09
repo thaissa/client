@@ -79,10 +79,10 @@ async function getPageView(pageIndex) {
     // a "pdfPage" property.
     pageView = await new Promise(resolve => {
       const onPagesLoaded = () => {
-        document.removeEventListener('pagesloaded', onPagesLoaded);
+        pdfViewer.eventBus.off('pagesloaded', onPagesLoaded);
         resolve(pdfViewer.getPageView(pageIndex));
       };
-      document.addEventListener('pagesloaded', onPagesLoaded);
+      pdfViewer.eventBus.on('pagesloaded', onPagesLoaded);
     });
   }
 

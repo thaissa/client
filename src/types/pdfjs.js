@@ -62,6 +62,7 @@
  * Defined in `web/pdf_viewer.js` in the PDF.js source.
  *
  * @prop {number} pagesCount
+ * @prop {EventBus} eventBus - Reference to the global event bus
  * @prop {(page: number) => PDFPageView|null} getPageView
  */
 
